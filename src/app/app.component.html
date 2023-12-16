@@ -1,8 +1,12 @@
 <div class="search" >
+   <div class="col-md-10">
+      <h3 class="text-center my-4">Search for Weather:</h3>
   <form  (ngSubmit)="onSubmit(task)"  #task="ngForm"  >
     <input type="text" placeholder="Search City" ngModel="city" name="city" >
+    <br>
+    <br>
     <div class="wrap"> 
-				<button type="submit" class="btn" > 
+				<button type="submit" class="btn btn-primary" > 
 				Submit 
 				</button> 
 			</div> 
@@ -17,7 +21,7 @@
 
   <div class="weather-data" >
     <div class="location">{{weather.name}}</div>
-    <div class="temperature">{{ weather.main.temp}} C</div>
+    <div class="temperature" > {{convertion(converttemperature)}} C</div>
   </div>
   </div>
   <div class="lower-data">
@@ -28,7 +32,7 @@
       <div class="info-block">
         <div class="info-block-label">
           <img src="https://content.khou.com/photo/2018/01/02/ThinkstockPhotos-868098786_1514925264801_12154981_ver1.0.jpg">
-          <span>Sealevel</span>
+          <span>Sealevel:</span>
         </div>
         <div class="info-block-value">
           {{weather.main.sea_level}}
@@ -38,10 +42,10 @@
       <div class="info-block">
         <div class="info-block-label">
           <img src="https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-          <span>Weather Description</span>
+          <span>Weather Description:</span>
         </div>
         <div class="info-block-value">
-          {{weather.description}}
+          {{weather.wind.deg}}
         </div>
       </div>
       <div class="info-block">
